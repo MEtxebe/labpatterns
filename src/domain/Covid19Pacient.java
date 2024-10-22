@@ -14,6 +14,8 @@ public class Covid19Pacient {
 	private int age;
 	private Map<Symptom,Integer> symptoms=new HashMap<Symptom,Integer>();
 	
+	private SymptomFactory sf=SymptomFactory.getInstance();
+	
 
 	public Covid19Pacient(String name, int years) {
 		this.name = name;
@@ -57,7 +59,7 @@ public class Covid19Pacient {
 	public Symptom addSymptomByName(String symptom, Integer w){
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
-			s=SymptonFactory.createSymptom(symptom); 
+			s=sf.createSymptom(symptom); 
 			symptoms.put(s,w);		
 		}
 		return s;
