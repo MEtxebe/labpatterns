@@ -12,7 +12,7 @@ import domain.Symptom;
 
 import javax.swing.JLabel;
 
-public class PacientObserverGUI extends JFrame{
+public class PacientObserverGUI extends JFrame implements Observer{
 
 	private JPanel contentPane;
 	private final JLabel symptomLabel = new JLabel("");
