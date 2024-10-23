@@ -7,11 +7,13 @@ public class SymptomFactory {
 	private static SymptomFactory instance;
 	
     public static SymptomFactory getInstance() {
-        if (instance == null) {
+        if (instance == null) {//oidhfaoñ
             instance = new SymptomFactory();
         }
         return instance;
     }
+    
+    
 	
 	public Symptom createSymptom(String symptomName) {
 	    List<String> impact5 = Arrays.asList("fiebre", "tos seca", "astenia","expectoracion");
