@@ -7,7 +7,7 @@ public class SymptomFactory {
 	private static SymptomFactory instance;
 	
     public static SymptomFactory getInstance() {
-        if (instance == null) {//oidhfaoñ
+        if (instance == null) {
             instance = new SymptomFactory();
         }
         return instance;
