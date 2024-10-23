@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import domain.Covid19Pacient;
 import domain.Symptom;
 
 import javax.swing.JLabel;
@@ -20,7 +21,7 @@ public class PacientObserverGUI extends JFrame implements Observer{
 	/**
 	 * Create the frame.
 	 */
-	public PacientObserverGUI() {
+	public PacientObserverGUI(Covid19Pacient p) {
 		setTitle("Pacient symptoms");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(650, 100, 200, 300);

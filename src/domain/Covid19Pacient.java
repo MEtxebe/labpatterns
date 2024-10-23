@@ -60,7 +60,9 @@ public class Covid19Pacient extends Observable{
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
 			s=sf.createSymptom(symptom); 
-			symptoms.put(s,w);		
+			symptoms.put(s,w);
+			setChanged();
+			notifyObservers();
 		}
 		return s;
 	}
@@ -68,7 +70,11 @@ public class Covid19Pacient extends Observable{
 	public Symptom removeSymptomByName(String symptomName) {
 		Symptom s=getSymptomByName(symptomName);
 		System.out.println("Simptom to remove: "+s);
-		if (s!=null) symptoms.remove(s);
+		if (s!=null) {
+			symptoms.remove(s);
+			setChanged();
+			notifyObservers();
+		}
 		return s;
 	}
 	public Iterator iterator() {
