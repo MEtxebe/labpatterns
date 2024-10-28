@@ -120,3 +120,4 @@ public class PacientSymptomGUI extends JFrame {
 		this.setVisible(true);
 	}
 }
+//Froga 
