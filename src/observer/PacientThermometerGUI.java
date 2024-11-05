@@ -69,17 +69,20 @@ public class PacientThermometerGUI extends Frame implements Observer{
 		private static final int left = 100;
 		private static final int right = 250;
 		private static final int height = 200;
-		
-		
-		
-		public	void	update(Observable	o,	Object	args)	{		
-			Covid19Pacient	p=(Covid19Pacient)	o;	
-//				Obtain	the		current	covidImpact	to	paint	
-			int	farenheit	=	(int)	p.covidImpact();		
-//				temperature	gauge	update	
-			gauges.set(farenheit);	
-			gauges.repaint();	
-			}	
+	
 	}
 	
+	@Override
+	public void update(Observable o, Object args) {
+		Covid19Pacient p=(Covid19Pacient) o;
+		// Obtain the current covidImpact to paint
+		int farenheit = (int) p.covidImpact();
+		// temperature gauge update
+		gauges.set(farenheit);
+		gauges.repaint();
+		}
 }
+
+
+	
+	
