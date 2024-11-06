@@ -1,24 +1,38 @@
 package adapter2;
 
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+import adapter2.Covid19PacientTableModelAdapter;
 import domain.Covid19Pacient;
+import domain.Symptom;
 import factory.SymptomFactory;
 
-public class Main {
+	public class Main {
 
-	public static void main(String[] args) {
-		SymptomFactory sf = new SymptomFactory();
-		Covid19Pacient pacient=new Covid19Pacient("aitor", 35, sf);
-		
-		pacient.addSymptomByName("disnea", 2);
-		pacient.addSymptomByName("cefalea", 1);
-		pacient.addSymptomByName("astenia", 3);
-		
-		ShowPacientTableGUI gui=new ShowPacientTableGUI(pacient);
-		gui.setPreferredSize(
-			      new java.awt.Dimension(300, 200));
-		gui.setVisible(true);
+		public static void main(String[] args) {
+			SymptomFactory sf = new SymptomFactory();
+			Covid19Pacient p=new Covid19Pacient("Ane", 29, sf);
+			p.addSymptom(new Symptom("s1", 10, 10), 1);
+			p.addSymptom(new Symptom("s2", 10, 10), 2);
+			p.addSymptom(new Symptom("s3", 10, 10), 3);
+			p.addSymptom(new Symptom("s4", 10, 10), 4);
+			p.addSymptom(new Symptom("s5", 10, 10), 5);
+			
+			
+			Covid19PacientTableModelAdapter pacientModelAdapter=new Covid19PacientTableModelAdapter(p);        
+			
+			JFrame j=new JFrame();
+			JTable table = new JTable(pacientModelAdapter);
+			 j.add(new JScrollPane(table));
+	         
+		     j.setTitle(p.getName()+"'s symptoms");
+		     j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
+		     j.pack();
+		     j.setVisible(true);
 
+		}
 
 	}
 
-}
