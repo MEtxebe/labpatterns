@@ -72,7 +72,7 @@ public class Covid19Pacient extends Observable{
 
 	public Symptom removeSymptomByName(String symptomName) {
 		Symptom s=getSymptomByName(symptomName);
-		System.out.println("Simptom to remove: "+s);
+		System.out.println("Symptom to remove: "+s);
 		if (s!=null) {
 			symptoms.remove(s);
 			setChanged();

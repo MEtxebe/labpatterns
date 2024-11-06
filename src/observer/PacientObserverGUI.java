@@ -45,8 +45,8 @@ public class PacientObserverGUI extends JFrame implements Observer{
 		Iterator<Symptom> i=p.getSymptoms().iterator();
 		Symptom p2;
 		while (i.hasNext()) {
-		p2=i.next();
-		s=s+ " - " + p2.toString()+", "+p.getWeight(p2)+"<br>";
+			p2=i.next();
+			s=s+ " - " + p2.toString()+", "+p.getWeight(p2)+"<br>";
 		}
 		s=s+"</html>";
 		symptomLabel.setText(s);

@@ -54,11 +54,12 @@ public class PacientSymptomGUI extends JFrame {
 		symptomComboBox.addItem(new Symptom("mialgia",100,3));
 		symptomComboBox.addItem(new Symptom("escalofríos",100,3));
 
-		symptomComboBox.addItem(new Symptom("náuseas o vómitos",100,1));
+		symptomComboBox.addItem(new Symptom("nauseas",100,1));
+		symptomComboBox.addItem(new Symptom("vómitos",100,1));
 		symptomComboBox.addItem(new Symptom("congestión nasal",100,1));
 		symptomComboBox.addItem(new Symptom("diarrea",100,1));
 		symptomComboBox.addItem(new Symptom("hemoptisis",100,1));
-		symptomComboBox.addItem(new Symptom("congestión conjuntival",100,1));
+		symptomComboBox.addItem(new Symptom("congestion conjuntival",100,1));
 		
 		
 		contentPane.add(symptomComboBox);
@@ -94,10 +95,12 @@ public class PacientSymptomGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				errorLabel.setText(" ");
 
-		    	System.out.println("Symptom removed :"+(Symptom)symptomComboBox.getSelectedItem());
-
 				//removeSymptomByName...
-		    	p.removeSymptomByName(((Symptom)symptomComboBox.getSelectedItem()).getName());
+		    	Symptom toRemove = p.removeSymptomByName(((Symptom)symptomComboBox.getSelectedItem()).getName());
+		    	
+		    	if(toRemove != null) {
+		    		System.out.println("Symptom removed :"+(Symptom)symptomComboBox.getSelectedItem());
+		    	}
 			} 
 		});
 		btnRemoveSymptom.setBounds(255, 202, 147, 29);
