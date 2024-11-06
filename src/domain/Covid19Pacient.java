@@ -16,11 +16,13 @@ public class Covid19Pacient extends Observable{
 	private int age;
 	private Map<Symptom,Integer> symptoms=new HashMap<Symptom,Integer>();
 
+	private SymptomFactory sf;
 	
 
-	public Covid19Pacient(String name, int years) {
+	public Covid19Pacient(String name, int years, SymptomFactory sf) {
 		this.name = name;
 		this.age = years;
+		this.sf=sf;
 	}
 	
 	public String getName() {
@@ -60,7 +62,7 @@ public class Covid19Pacient extends Observable{
 	public Symptom addSymptomByName(String symptom, Integer w){
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
-			s=SymptomFactory.createSymptom(symptom); 
+			s=sf.createSymptom(symptom); 
 			symptoms.put(s,w);
 			setChanged();
 			notifyObservers();

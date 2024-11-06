@@ -15,6 +15,8 @@ public class Medicament {
 	private List<Symptom> symptoms=new ArrayList<Symptom>();
 	
 
+	private SymptomFactory sf;
+
 	public String getName() {
 		return name;
 	}
@@ -23,9 +25,10 @@ public class Medicament {
 		this.name = name;
 	}
 
-	public Medicament(String name) {
+	public Medicament(String name, SymptomFactory sf) {
 		super();
 		this.name = name;
+		this.sf=sf;
 	}
 
 	public Symptom addSymptomByName(String symptom){
@@ -33,7 +36,7 @@ public class Medicament {
 		Symptom s=getSymptomByName(symptom);
 		if (s==null) {
 
-			s2=SymptomFactory.createSymptom(symptom);
+			s2=sf.createSymptom(symptom);
 			symptoms.add(s2);
 		}
 		return s2;
