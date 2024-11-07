@@ -13,12 +13,17 @@ import factory.SymptomFactory;
 
 		public static void main(String[] args) {
 			SymptomFactory sf = new SymptomFactory();
-			Covid19Pacient m=new Covid19Pacient("Mikel", 32, sf);
-			m.addSymptom(new Symptom("sm1", 10, 10), 1);
+			Covid19Pacient m=new Covid19Pacient("Aitor", 32, sf);
+			/*m.addSymptom(new Symptom("sm1", 10, 10), 1);
 			m.addSymptom(new Symptom("sm2", 10, 10), 2);
 			m.addSymptom(new Symptom("sm3", 10, 10), 3);
 			m.addSymptom(new Symptom("sm4", 10, 10), 4);
-			m.addSymptom(new Symptom("sm5", 10, 10), 5);
+			m.addSymptom(new Symptom("sm5", 10, 10), 5);*/
+			
+			m.addSymptom(new Symptom("disnea", 10, 10), 2);
+			m.addSymptom(new Symptom("astenia", 10, 10), 3);
+			m.addSymptom(new Symptom("cefalea", 10, 10), 1);
+			
 			
 			
 			Covid19Pacient j=new Covid19Pacient("Jon", 22, sf);
@@ -39,7 +44,7 @@ import factory.SymptomFactory;
 			 jf1.add(new JScrollPane(table1));
 			 
 	         
-		     jf1.setTitle(m.getName()+"'s symptoms");
+		     jf1.setTitle("Covid Symptoms " + m.getName());
 		     jf1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
 		     jf1.pack();
 		     jf1.setVisible(true);
@@ -48,7 +53,7 @@ import factory.SymptomFactory;
 			JTable table2 = new JTable(pacientModelAdapter2);
 				jf2.add(new JScrollPane(table2));
 				
-			     jf2.setTitle(j.getName()+"'s symptoms");
+			     jf2.setTitle("Covid Symptoms " + j.getName());
 			     jf2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
 			     jf2.pack();
 			     jf2.setVisible(true);
