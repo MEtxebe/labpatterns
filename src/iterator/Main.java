@@ -35,7 +35,7 @@ import factory.SymptomFactory;
 			}
 			
 			
-			Iterator it= Sorting.sortedIterator(i, comName);
+			Iterator<Symptom> it= Sorting.sortedIterator(i, comName);
 			System.out.println("Izenen arabera ordenatua");
 			while(it.hasNext()) {
 				System.out.println(it.next());
