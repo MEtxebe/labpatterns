@@ -31,12 +31,12 @@ public class Covid19PacientAdapter implements InvertedIterator {
 	// true if there is a previous element
 	@Override
 	public boolean hasPrevious() {
-		return position>0;
+		return position>=0;
 	}
 
 	// It is placed in the last element
 	@Override
 	public void goLast() {
-		position=symptoms.size();
+		position=symptoms.size()-1;
 	}
 }
