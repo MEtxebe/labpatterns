@@ -37,6 +37,4 @@ public class Main {
 			
 			TableModel t =new TableModel(pacient3);
 	}
-
-
 }

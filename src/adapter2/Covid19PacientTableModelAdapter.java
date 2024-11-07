@@ -8,7 +8,6 @@ import java.util.Observer;
 
 import domain.Covid19Pacient;
 import domain.Symptom;
-import adapter2.TableModel;
 
 public class Covid19PacientTableModelAdapter extends AbstractTableModel implements Observer{
 	  protected Covid19Pacient pacient;
@@ -48,7 +47,7 @@ public class Covid19PacientTableModelAdapter extends AbstractTableModel implemen
 
 	@Override
 	public void update(Observable o, Object arg) {
-		Covid19Pacient p=(Covid19Pacient) o;
-		sList= new ArrayList<>(p.getSymptoms());
+		sList= new ArrayList<>(((Covid19Pacient) o).getSymptoms());
+		fireTableDataChanged();
 	}
 }
