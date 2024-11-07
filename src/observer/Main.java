@@ -2,6 +2,12 @@ package observer;
 
 import java.util.Observable;
 
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+import adapter2.TableModel;
+import adapter2.Covid19PacientTableModelAdapter;
 import domain.Covid19Pacient;
 import factory.SymptomFactory;
 
@@ -28,6 +34,21 @@ public class Main {
 			new PacientObserverGUI(pacient3);
 			new PacientSymptomGUI(pacient3);
 			new PacientThermometerGUI(pacient3);
+			
+			
+			
+			TableModel t =new TableModel(pacient3);
+			
+			JFrame jf1=new JFrame();
+			
+			JTable table1 = new JTable(pacientModelAdapter1);
+			 jf1.add(new JScrollPane(table1));
+	         
+		     jf1.setTitle("Covid Symptoms " + pacient3.getName());
+		     jf1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
+		     jf1.pack();
+		     jf1.setVisible(true);
+		     
 	}
 
 

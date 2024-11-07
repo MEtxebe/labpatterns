@@ -3,11 +3,14 @@ package adapter2;
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
+import java.util.Observable;
+import java.util.Observer;
 
 import domain.Covid19Pacient;
 import domain.Symptom;
+import adapter2.TableModel;
 
-public class Covid19PacientTableModelAdapter extends AbstractTableModel {
+public class Covid19PacientTableModelAdapter extends AbstractTableModel implements Observer{
 	  protected Covid19Pacient pacient;
 	  protected String[] columnNames =new String[] {"Symptom", "Weight" };
 	  protected ArrayList<Symptom> sList;
@@ -15,6 +18,8 @@ public class Covid19PacientTableModelAdapter extends AbstractTableModel {
 	  public Covid19PacientTableModelAdapter(Covid19Pacient p) {
 	    this.pacient=p;
 	    this.sList=new ArrayList<>(pacient.getSymptoms());
+	    
+	    p.addObserver(this);
 	  }
 
 	  public int getColumnCount() {
@@ -40,4 +45,12 @@ public class Covid19PacientTableModelAdapter extends AbstractTableModel {
 	        }	        
 	        return null;
 	  }
+
+	@Override
+	public void update(Observable o, Object arg) {
+		Covid19Pacient p=(Covid19Pacient) o;
+		sList= new ArrayList<>(p.getSymptoms());
+		
+		
 	}
+}
