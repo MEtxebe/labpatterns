@@ -50,7 +50,5 @@ public class Covid19PacientTableModelAdapter extends AbstractTableModel implemen
 	public void update(Observable o, Object arg) {
 		Covid19Pacient p=(Covid19Pacient) o;
 		sList= new ArrayList<>(p.getSymptoms());
-		
-		
 	}
 }

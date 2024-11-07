@@ -35,20 +35,7 @@ public class Main {
 			new PacientSymptomGUI(pacient3);
 			new PacientThermometerGUI(pacient3);
 			
-			
-			
 			TableModel t =new TableModel(pacient3);
-			
-			JFrame jf1=new JFrame();
-			
-			JTable table1 = new JTable(pacientModelAdapter1);
-			 jf1.add(new JScrollPane(table1));
-	         
-		     jf1.setTitle("Covid Symptoms " + pacient3.getName());
-		     jf1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
-		     jf1.pack();
-		     jf1.setVisible(true);
-		     
 	}
 
 
