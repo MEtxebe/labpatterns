@@ -8,17 +8,15 @@ import java.util.List;
 import domain.Symptom;
 
 
-public class Sorting {
-	public static Iterator<Object> sortedIterator(InvertedIterator it, Comparator<Object> comparator) {
-	      List<Object> list = new ArrayList<>();
-	      it.goLast();
-	      while (it.hasPrevious()) {
-	    	  Symptom s= (Symptom)it.previous();
-	          list.add(s);
-	      }
-
-	      Collections.sort(list, comparator);
-	      return list.iterator();
-	  }
-
-}
+public class Sorting { 
+	public static Iterator sortedIterator(InvertedIterator it, Comparator comparator) { 
+		List list = new ArrayList(); 
+		it.goLast(); 
+		while (it.hasPrevious()) { 
+			Symptom s=(Symptom)it.previous(); 
+			list.add(s); 
+		} 
+		Collections.sort(list, comparator); 
+		return list.iterator(); 
+	} 
+}  

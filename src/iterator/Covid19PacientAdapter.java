@@ -6,14 +6,15 @@ import java.util.Set;
 import java.util.Vector;
 
 import adapter.InvertedIterator;
+import domain.Covid19Pacient;
 import domain.Symptom;
 
 public class Covid19PacientAdapter implements InvertedIterator {
 	List<Symptom> symptoms=new Vector<Symptom>();
 	int position;
 	
-	public Covid19PacientAdapter(Set<Symptom> s) {
-		Iterator<Symptom> i=s.iterator();
+	public Covid19PacientAdapter(Covid19Pacient p) {
+		Iterator<Symptom> i=p.getSymptoms().iterator();
 		while (i.hasNext())
 			symptoms.add(i.next());
 		position=symptoms.size()-1;
